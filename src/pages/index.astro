@@ -1,11 +1,2086 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// BSCKII Huỳnh Thị Thu Ba — Professional Ophthalmologist Website
+// To use: replace this file with your src/pages/index.astro
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ═══ SEO META ═══ -->
+  <title>BSCKII Huỳnh Thị Thu Ba | Chuyên Gia Phẫu Thuật Khúc Xạ & Nhãn Khoa TP.HCM</title>
+  <meta name="description" content="BSCKII Huỳnh Thị Thu Ba – Trưởng Khoa Phẫu thuật Khúc xạ BV Cao Thắng. 30+ năm kinh nghiệm, 150.000+ ca khám, chuyên SMILE PRO AI 4.0, Phaco, điều trị bệnh lý mắt. Phòng khám tại Quận 8, TP.HCM." />
+  <meta name="keywords" content="bác sĩ mắt quận 8, phẫu thuật SMILE TP.HCM, BSCKII Thu Ba, phẫu thuật khúc xạ, bệnh viện Cao Thắng mắt, Huỳnh Thị Thu Ba" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bsthubamat.vn" />
+
+  <!-- ═══ OPEN GRAPH (Facebook / Zalo share) ═══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bsthubamat.vn" />
+  <meta property="og:title" content="BSCKII Huỳnh Thị Thu Ba | Chuyên Gia Phẫu Thuật Mắt" />
+  <meta property="og:description" content="30+ năm kinh nghiệm, 150.000+ ca khám thành công. Trưởng Khoa Phẫu thuật Khúc xạ BV Mắt Cao Thắng." />
+  <!-- 📸 HÌNH ẢNH OG: Thêm ảnh chân dung bác sĩ kích thước 1200x630px vào /public/og-image.jpg -->
+  <meta property="og:image" content="/og-image.jpg" />
+
+  <!-- ═══ SCHEMA.ORG – Google Physician Card ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "BSCKII Huỳnh Thị Thu Ba",
+    "description": "Trưởng Khoa Phẫu thuật Khúc xạ, Bệnh viện Chuyên khoa Mắt Cao Thắng. 30+ năm kinh nghiệm nhãn khoa.",
+    "medicalSpecialty": "Ophthalmology",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "112 Đường Cao Lỗ, Phường 4",
+      "addressLocality": "Quận 8",
+      "addressRegion": "TP.HCM",
+      "addressCountry": "VN"
+    },
+    "worksFor": {
+      "@type": "Hospital",
+      "name": "Bệnh viện Chuyên khoa Mắt Cao Thắng"
+    },
+    "alumniOf": "Đại học Y Dược TP.HCM"
+  }
+  </script>
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0b1e3d;
+      --navy-mid: #152d58;
+      --navy-light: #1e3f73;
+      --teal: #0a8a8a;
+      --teal-light: #0fb8b8;
+      --gold: #b8922a;
+      --gold-light: #d4a843;
+      --cream: #faf8f4;
+      --cream-mid: #f0ede6;
+      --text: #1a1a2e;
+      --text-muted: #5a6478;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1 {
+		font-family: 'Cormorant Garamond', serif;
+	}
+	h2, h3, h4 {
+		font-family: 'Be Vietnam Pro', sans-serif;
+		letter-spacing: -0.02em;
+	}
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── NAVIGATION ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(11, 30, 61, 0.0);
+      backdrop-filter: blur(0px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    #navbar.scrolled {
+      background: rgba(11, 30, 61, 0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+      border-bottom-color: rgba(255,255,255,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .nav-logo-mark {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .nav-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+    }
+    .nav-logo-title {
+      font-size: 0.65rem;
+      color: var(--teal-light);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal-light); }
+    .nav-cta {
+      background: var(--teal) !important;
+      color: white !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--teal-light) !important; transform: translateY(-1px); }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .mobile-cta {
+      background: var(--teal);
+      color: white !important;
+      text-align: center;
+      padding: 0.75rem !important;
+      border-radius: 50px;
+      border: none !important;
+      font-weight: 600 !important;
+      margin-top: 0.5rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      background: linear-gradient(155deg, var(--navy) 0%, var(--navy-mid) 50%, #0d3a5c 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding-top: 72px;
+    }
+    .hero-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(10, 138, 138, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 138, 138, 0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-orb-1 {
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(10,138,138,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-orb-2 {
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,146,42,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 138, 138, 0.15);
+      border: 1px solid rgba(10, 138, 138, 0.3);
+      color: var(--teal-light);
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .hero-quote {
+      border-left: 3px solid var(--gold);
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 2.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 0 8px 8px 0;
+    }
+    .hero-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(10,138,138,0.35);
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(10,138,138,0.45); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.85);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--teal-light); background: rgba(10,138,138,0.1); }
+
+    /* ── HERO PHOTO ── */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-photo-frame {
+      position: relative;
+      width: 360px;
+      max-width: 100%;
+    }
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -16px; right: -16px;
+      width: 100%; height: 100%;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      opacity: 0.4;
+    }
+    .hero-photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -16px; left: -16px;
+      width: 60%; height: 60%;
+      border: 2px solid var(--teal);
+      border-radius: 12px;
+      opacity: 0.3;
+    }
+    /* 
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │  📸 HÌNH ẢNH #1 — ẢNH CHÂN DUNG HERO                               │
+    │  Vị trí: Thay thẻ <div class="hero-img-placeholder"> bên dưới      │
+    │  bằng: <img src="/images/bsthuba-portrait.jpg" alt="BSCKII Huỳnh  │
+    │  Thị Thu Ba" class="hero-photo-img" />                              │
+    │  Yêu cầu: Ảnh mặc áo blouse trắng, nền trắng/xanh nhạt,           │
+    │  kích thước khuyên dùng: 720x900px, định dạng .jpg hoặc .webp      │
+    └─────────────────────────────────────────────────────────────────────┘
+    */
+    .hero-photo-img, .hero-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 16px;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-img-placeholder {
+      background: linear-gradient(145deg, #1e3a5f, #0d2d4a);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 2rem;
+      border: 1px dashed rgba(10,138,138,0.4);
+    }
+    .hero-img-placeholder svg { opacity: 0.3; }
+    .hero-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: white;
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .hero-badge-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      max-width: 80px;
+      line-height: 1.4;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-num span { color: var(--teal-light); }
+    .stat-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+    .section-tag::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--teal);
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ── MEDIA STRIP (VTV2) ── */
+    #media-strip {
+      background: var(--cream-mid);
+      border-top: 1px solid rgba(11,30,61,0.08);
+      border-bottom: 1px solid rgba(11,30,61,0.08);
+      padding: 1.5rem 2rem;
+      overflow: hidden;
+    }
+    .media-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .media-strip-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .media-strip-divider {
+      width: 1px; height: 24px;
+      background: rgba(11,30,61,0.12);
+      flex-shrink: 0;
+    }
+    .media-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.6rem 1.2rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid rgba(11,30,61,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.2s;
+    }
+    .media-badge:hover { transform: translateY(-2px); }
+    .media-badge-icon {
+      width: 32px; height: 32px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .media-badge-icon svg { color: white; }
+    .media-badge-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .media-badge-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+    .media-badge-desc { font-size: 0.65rem; color: var(--text-muted); }
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--navy-mid);
+      padding: 0.5rem 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid rgba(11,30,61,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .cert-badge svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ── SERVICES ── */
+    #dich-vu {
+      padding: 7rem 2rem;
+      background: var(--cream);
+    }
+    .services-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .services-header { margin-bottom: 4rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(11,30,61,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(11,30,61,0.1);
+    }
+    /*
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │  📸 HÌNH ẢNH #2, #3, #4 — ẢNH MINH HỌA DỊCH VỤ (3 tấm)           │
+    │  Thay mỗi <div class="service-img-ph"> bằng thẻ <img>              │
+    │  #2 – SMILE PRO: Máy laser / phòng mổ hiện đại (700x320px)         │
+    │  #3 – Phaco: Người lớn tuổi khám mắt / kính lúp (700x320px)       │
+    │  #4 – Bệnh lý: Bác sĩ sử dụng đèn soi đáy mắt (700x320px)         │
+    │  Ví dụ: <img src="/images/service-smile.jpg" class="service-img">  │
+    └─────────────────────────────────────────────────────────────────────┘
+    */
+    .service-img, .service-img-ph {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .service-img-ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1rem;
+    }
+    .svc-ph-1 { background: linear-gradient(135deg, #0b2a52, #0a5f6e); }
+    .svc-ph-2 { background: linear-gradient(135deg, #0b3a52, #0b4d3a); }
+    .svc-ph-3 { background: linear-gradient(135deg, #1e2a52, #3a2052); }
+    .service-body { padding: 1.75rem; }
+    .service-icon-wrap {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .icon-teal { background: rgba(10,138,138,0.1); color: var(--teal); }
+    .icon-gold { background: rgba(184,146,42,0.1); color: var(--gold); }
+    .icon-navy { background: rgba(11,30,61,0.08); color: var(--navy); }
+    .service-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 50px;
+      font-weight: 500;
+      background: var(--cream-mid);
+      color: var(--navy-mid);
+      border: 1px solid rgba(11,30,61,0.1);
+    }
+
+    /* ── JOURNEY / TIMELINE ── */
+    #hanh-trinh {
+      padding: 7rem 2rem;
+      background: white;
+      border-top: 1px solid rgba(11,30,61,0.06);
+    }
+    .journey-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .journey-header { text-align: center; margin-bottom: 4.5rem; }
+    .journey-motto {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--teal);
+      margin-top: 0.5rem;
+    }
+    .timeline {
+  position: relative;
+  padding-left: 2.5rem;
+	}
+	@media (max-width: 400px) {
+	.timeline {
+		padding-left: 1.75rem;
+	}
+	.timeline::before {
+		left: 2px;
+	}
+	.tl-dot {
+		left: -1.75rem;
+		width: 10px;
+		height: 10px;
+	}
+	.tl-item {
+		padding-left: 1.25rem;
+	}
+	.tl-title {
+		font-size: 1.1rem;
+	}
+	.tl-chips {
+		gap: 0.35rem;
+	}
+	.chip {
+		font-size: 0.65rem;
+		padding: 0.18rem 0.55rem;
+	}
+	}
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--gold), transparent);
+    }
+    .tl-item {
+      position: relative;
+      padding-bottom: 3rem;
+      padding-left: 2rem;
+    }
+    .tl-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--teal);
+    }
+    .tl-dot.gold { background: var(--gold); box-shadow: 0 0 0 3px var(--gold); }
+    .tl-dot.dim { background: var(--cream-mid); box-shadow: 0 0 0 3px var(--cream-mid); }
+    .tl-year {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.35rem;
+    }
+    .tl-year.gold-yr { color: var(--gold); }
+    .tl-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .tl-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .tl-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      background: var(--cream);
+      color: var(--navy-mid);
+      border: 1px solid rgba(11,30,61,0.1);
+      font-weight: 500;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #danh-gia {
+      padding: 7rem 2rem;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #danh-gia::before {
+      content: '"';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30rem;
+      color: rgba(255,255,255,0.02);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .testimonials-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .testimonials-header .section-tag { justify-content: center; }
+    .testimonials-header .section-tag::before { display: none; }
+    .testimonials-header .section-title { color: white; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.08);
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+      color: var(--gold-light);
+    }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--navy-light));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 600;
+      color: white;
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+    .testimonial-meta {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+
+    /* ── FAQ ── */
+    #faq {
+      padding: 7rem 2rem;
+      background: var(--cream);
+      border-top: 1px solid rgba(11,30,61,0.06);
+    }
+    .faq-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-header { text-align: center; margin-bottom: 3.5rem; }
+    .faq-item {
+      border-bottom: 1px solid rgba(11,30,61,0.08);
+    }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--cream-mid);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.3s;
+    }
+    .faq-icon svg { transition: transform 0.3s; }
+    .faq-item.open .faq-icon { background: var(--teal); }
+    .faq-item.open .faq-icon svg { color: white; transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+    }
+    .faq-a-inner {
+      padding-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ── APPOINTMENT ── */
+    #dat-lich {
+      padding: 7rem 2rem;
+      background: white;
+      border-top: 1px solid rgba(11,30,61,0.06);
+    }
+    .apt-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .apt-info-tag { margin-bottom: 0.75rem; }
+    .apt-title { margin-bottom: 0.75rem; }
+    .apt-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .apt-details { display: flex; flex-direction: column; gap: 1.25rem; }
+    .apt-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .apt-detail-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(10,138,138,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .apt-detail-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.2rem;
+    }
+    .apt-detail-value {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .apt-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    /* Google Maps embed */
+    .map-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(11,30,61,0.08);
+      box-shadow: 0 8px 32px rgba(11,30,61,0.07);
+    }
+    .map-embed {
+      width: 100%;
+      height: 280px;
+      border: none;
+      display: block;
+    }
+    .map-footer {
+      padding: 1.25rem 1.5rem;
+      background: var(--cream);
+      border-top: 1px solid rgba(11,30,61,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .map-address {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .map-address strong { display: block; color: var(--navy); font-size: 0.9rem; margin-bottom: 2px; }
+    .map-dir-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .map-dir-btn:hover { color: var(--navy); }
+    /* Zalo CTA card */
+    .zalo-card {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: 16px;
+      padding: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .zalo-card-text strong {
+      display: block;
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .zalo-card-text span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .zalo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0068FF;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .zalo-btn:hover { background: #0052cc; transform: translateY(-1px); }
+
+    /* ── FLOATING BUTTONS ── */
+    .fab-group {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+    .fab {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .fab:hover { transform: scale(1.1); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .fab-zalo { background: #0068FF; }
+    .fab-apt { background: var(--teal); }
+    .fab-ring {
+      position: absolute; inset: -3px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      opacity: 0;
+      animation: ring-pulse 2.5s ease-out infinite;
+    }
+    .fab-apt .fab-ring { color: var(--teal); }
+    .fab-zalo .fab-ring { color: #0068FF; }
+    @keyframes ring-pulse {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.6); }
+    }
+    .fab-tooltip {
+      position: absolute;
+      right: calc(100% + 10px);
+      background: var(--navy);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .fab:hover .fab-tooltip { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--teal-light);
+      letter-spacing: 0.1em;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+  }
+  .hero-ctas { justify-content: center; }
+  .hero-photo-frame { width: 260px; }
+  .hero-badge { bottom: -10px; right: 10px; }
+  .hero-quote { text-align: left; }
+
+  /* Stats */
+  .stats-inner {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 0;
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 1.25rem 1rem;
+  }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-num { font-size: 2.4rem; }
+
+  /* Services — show as horizontal scroll on tablet, stacked on phone */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .service-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .service-img,
+  .service-img-ph {
+    height: 100%;
+    min-height: 160px;
+    width: 140px;
+    border-radius: 0;
+  }
+  .service-body {
+    padding: 1.25rem;
+  }
+  .service-name { font-size: 1rem; }
+  .service-desc { font-size: 0.8rem; margin-bottom: 0.75rem; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .testimonial-card { padding: 1.5rem; }
+
+  /* Appointment */
+  .apt-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .zalo-card { flex-direction: column; text-align: center; }
+
+  /* Media strip */
+  .media-strip-inner {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .media-strip-inner::-webkit-scrollbar { display: none; }
+
+  /* Sections padding */
+  #dich-vu, #hanh-trinh, #danh-gia, #faq, #dat-lich {
+    padding: 4rem 1.25rem;
+  }
+  #media-strip { padding: 1.25rem 1.25rem; }
+}
+
+	/* Extra narrow — 375px iPhones */
+	@media (max-width: 400px) {
+	/* Timeline */
+	.timeline { padding-left: 1.75rem; }
+	.timeline::before { left: 2px; }
+	.tl-dot { left: -1.75rem; width: 10px; height: 10px; }
+	.tl-item { padding-left: 1.25rem; padding-bottom: 2.25rem; }
+	.tl-title { font-size: 1.05rem; }
+	.tl-chips { gap: 0.35rem; }
+	.chip { font-size: 0.65rem; padding: 0.18rem 0.55rem; }
+
+	/* Service cards back to full stacked on very small screens */
+	.service-card {
+		display: block;
+	}
+	.service-img,
+	.service-img-ph {
+		width: 100%;
+		height: 160px;
+	}
+
+	/* Hero */
+	.hero-title { font-size: 2rem; }
+	.hero-subtitle { font-size: 0.9rem; }
+	.hero-photo-frame { width: 220px; }
+	.btn-primary, .btn-outline {
+		padding: 0.75rem 1.4rem;
+		font-size: 0.85rem;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* Stats */
+	.stat-num { font-size: 2.1rem; }
+
+	/* FAQ */
+	.faq-q-text { font-size: 1rem; }
+
+	/* Sections padding tighter */
+	#dich-vu, #hanh-trinh, #danh-gia, #faq, #dat-lich {
+		padding: 3.5rem 1rem;
+	}
+	.section-title { font-size: 1.7rem; }
+	}
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <div class="nav-logo-mark">TB</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">BSCKII. Thu Ba</span>
+          <span class="nav-logo-title">Chuyên Khoa Mắt</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#dich-vu">Dịch Vụ</a></li>
+        <li><a href="#hanh-trinh">Hành Trình</a></li>
+        <li><a href="#danh-gia">Đánh Giá</a></li>
+        <li><a href="#faq">Câu Hỏi</a></li>
+        <li><a href="#dat-lich" class="nav-cta">Đặt Lịch Khám</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#dich-vu" class="mobile-link">Dịch Vụ</a>
+    <a href="#hanh-trinh" class="mobile-link">Hành Trình</a>
+    <a href="#danh-gia" class="mobile-link">Đánh Giá</a>
+    <a href="#faq" class="mobile-link">Câu Hỏi Thường Gặp</a>
+    <a href="#dat-lich" class="mobile-cta mobile-link">📅 Đặt Lịch Khám</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-orb-1"></div>
+    <div class="hero-orb-2"></div>
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">BV Chuyên Khoa Mắt Cao Thắng – JCI Accredited</div>
+        <h1 class="hero-title">
+          Bác sĩ Chuyên Khoa II<br>
+          <em>Huỳnh Thị Thu Ba</em>
+        </h1>
+        <p class="hero-subtitle">Chuyên Gia Phẫu Thuật Khúc Xạ & Nhãn Khoa</p>
+        <blockquote class="hero-quote">
+          <p>"Đôi mắt là cửa sổ tâm hồn, là tài sản quý giá nhất của mỗi con người, mang đến thế giới đầy màu sắc, mở ra những yêu thương với người thân, bạn bè."</p>
+        </blockquote>
+        <div class="hero-ctas">
+          <a href="#dat-lich" class="btn-primary">Đăng Ký Khám Chuyên Sâu</a>
+          <a href="#hanh-trinh" class="btn-outline">Tìm Hiểu Thêm</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <!-- 
+          ┌──────────────────────────────────────────────────────────────┐
+          │ 📸 ẢNH #1 – CHÂN DUNG HERO                                  │
+          │ Xóa thẻ <div class="hero-img-placeholder"> bên dưới        │
+          │ Thay bằng:                                                   │
+          │ <img src="/images/bsthuba-portrait.jpg"                     │
+          │      alt="BSCKII Huỳnh Thị Thu Ba"                          │
+          │      class="hero-photo-img" />                               │
+          │ Kích thước lý tưởng: 720 × 900 px                           │
+          │ Phong cách: Áo blouse trắng, nền xanh nhạt hoặc trắng       │
+          └──────────────────────────────────────────────────────────────┘
+          -->
+          <img src="/whiteblouse.jpg"
+			alt="BSCKII Huỳnh Thị Thu Ba – Chuyên gia phẫu thuật mắt"
+			class="hero-photo-img" />
+
+          <div class="hero-badge">
+            <div class="hero-badge-num">30<span style="color:var(--teal);font-size:1.2rem">+</span></div>
+            <div class="hero-badge-label">Năm Kinh Nghiệm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="counter" data-target="150000">0</span><span>+</span></div>
+        <div class="stat-label">Ca Thăm Khám & Điều Trị</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span class="counter" data-target="50000">0</span><span>+</span></div>
+        <div class="stat-label">Ca Phẫu Thuật Thành Công</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span class="counter" data-target="30000">0</span><span>+</span></div>
+        <div class="stat-label">Phẫu Thuật Khúc Xạ (LASIK/SMILE)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MEDIA TRUST STRIP
+  ═══════════════════════════════════════ -->
+  <div id="media-strip">
+    <div class="media-strip-inner">
+      <span class="media-strip-label">Được Tin Tưởng & Công Nhận Bởi</span>
+      <div class="media-strip-divider"></div>
+
+      <div class="media-badge">
+        <div class="media-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="media-badge-text">
+          <span class="media-badge-name">VTV2</span>
+          <span class="media-badge-desc">Cố vấn y khoa 2006 – 2017</span>
+        </div>
+      </div>
+
+      <div class="media-badge">
+        <div class="media-badge-icon" style="background:var(--teal)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="media-badge-text">
+          <span class="media-badge-name">Cao Thắng Eye Hospital</span>
+          <span class="media-badge-desc">Trưởng Khoa Phẫu Thuật Khúc Xạ</span>
+        </div>
+      </div>
+
+      <div class="cert-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        JCI Accredited
+      </div>
+
+      <div class="cert-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        BSCKII – ĐH Y Phạm Ngọc Thạch
+      </div>
+
+      <div class="cert-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Zeiss SMILE PRO Certified
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       WHY CHOOSE
+  ═══════════════════════════════════════ -->
+  <section style="padding:5rem 2rem; background:var(--cream);">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+        <div class="section-tag" style="justify-content:center;">Tại Sao Chọn Bác Sĩ Thu Ba</div>
+        <h2 class="section-title">Điều Gì Làm Nên<br>Sự Khác Biệt</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+
+        <div class="reveal" style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(11,30,61,0.07);">
+          <div style="width:52px;height:52px;background:rgba(10,138,138,0.08);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Chuyên Gia Giác Mạc Yếu</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Nhiều bệnh nhân từng bị từ chối ở nơi khác vì giác mạc mỏng. Bác sĩ Thu Ba có phác đồ điều trị riêng, an toàn và hiệu quả cho những trường hợp đặc biệt này.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1" style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(11,30,61,0.07);">
+          <div style="width:52px;height:52px;background:rgba(184,146,42,0.08);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">11 Năm Tư Vấn Trên VTV2</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Hàng triệu người đã tin tưởng qua màn ảnh. Bác sĩ nổi tiếng với khả năng giải thích y khoa phức tạp thành ngôn ngữ dễ hiểu, gần gũi nhất với bệnh nhân.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2" style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(11,30,61,0.07);">
+          <div style="width:52px;height:52px;background:rgba(11,30,61,0.06);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Công Nghệ AI Cá Nhân Hóa</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">SMILE PRO AI 4.0 phân tích bản đồ giác mạc riêng từng mắt. Không có hai ca phẫu thuật nào giống nhau — mỗi bệnh nhân nhận một kế hoạch điều trị được thiết kế đặc biệt.</p>
+        </div>
+
+        <div class="reveal reveal-delay-3" style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(11,30,61,0.07);">
+          <div style="width:52px;height:52px;background:rgba(10,138,138,0.08);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 style="font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Nhẹ Nhàng & Tận Tâm</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Bệnh nhân thường mô tả bác sĩ là "dễ chịu, nhẹ nhàng, có chuyên môn cao". Mỗi ca khám là một hành trình lắng nghe và trấn an — không chỉ là thủ thuật y khoa.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="dich-vu">
+    <div class="services-wrap">
+      <div class="services-header reveal">
+        <div class="section-tag">Dịch Vụ Chuyên Sâu</div>
+        <h2 class="section-title">Giải Pháp Thị Lực<br>Toàn Diện & Cá Nhân Hóa</h2>
+        <p class="section-lead">Với hơn 30 năm kinh nghiệm, Bác sĩ Thu Ba mang đến các phương pháp điều trị tiên tiến, được thiết kế riêng cho từng bệnh nhân.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <!-- 
+          ┌──────────────────────────────────────────────────────────────┐
+          │ 📸 ẢNH #2 – DỊCH VỤ SMILE PRO                               │
+          │ Xóa thẻ <div class="service-img-ph svc-ph-1"> bên dưới      │
+          │ Thay bằng:                                                   │
+          │ <img src="/images/service-smile.jpg"                        │
+          │      alt="Phẫu thuật SMILE PRO" class="service-img">        │
+          │ Nội dung: Máy laser Zeiss Visumax / phòng mổ hiện đại       │
+          │ Kích thước: 700 × 320 px                                     │
+          └──────────────────────────────────────────────────────────────┘
+          -->
+          <img src="/laserpictures.jpg"
+				alt="Công nghệ laser SMILE PRO"
+				class="service-img" />
+
+          <div class="service-body">
+            <div class="service-icon-wrap icon-teal">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <h3 class="service-name">Phẫu Thuật Xóa Cận (SMILE PRO)</h3>
+            <p class="service-desc">Công nghệ AI cá nhân hóa SMILE PRO 4.0 — đặc biệt an toàn cho giác mạc yếu, kèm phác đồ chống khô mắt độc quyền. Bao gồm Femto-LASIK và ReLEx SMILE.</p>
+            <div class="service-tags">
+              <span class="tag">SMILE PRO AI 4.0</span>
+              <span class="tag">Femto-LASIK</span>
+              <span class="tag">Giác mạc yếu</span>
+              <span class="tag">Lão thị</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <!--
+          ┌──────────────────────────────────────────────────────────────┐
+          │ 📸 ẢNH #3 – DỊCH VỤ PHACO                                   │
+          │ Xóa <div class="service-img-ph svc-ph-2"> bên dưới          │
+          │ Thay bằng:                                                   │
+          │ <img src="/images/service-phaco.jpg"                        │
+          │      alt="Phẫu thuật Phaco" class="service-img">            │
+          │ Nội dung: Người lớn tuổi khám mắt hoặc kính hiển vi phẫu    │
+          │ thuật Kích thước: 700 × 320 px                               │
+          └──────────────────────────────────────────────────────────────┘
+          -->
+          <img src="/anotherlaserpicture.jpg"
+				alt="Phẫu thuật thủy tinh thể Phaco"
+				class="service-img" />
+
+          <div class="service-body">
+            <div class="service-icon-wrap icon-gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="service-name">Phẫu Thuật Thủy Tinh Thể (Phaco)</h3>
+            <p class="service-desc">Phục hồi thị lực cho người lớn tuổi bằng phương pháp Phaco đơn tiêu và đa tiêu. Kỹ thuật xâm lấn tối thiểu, hồi phục nhanh, an toàn tuyệt đối.</p>
+            <div class="service-tags">
+              <span class="tag">Monofocal IOL</span>
+              <span class="tag">Multifocal IOL</span>
+              <span class="tag">Đục thủy tinh thể</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <!--
+          ┌──────────────────────────────────────────────────────────────┐
+          │ 📸 ẢNH #4 – DỊCH VỤ KHÁM BỆNH LÝ                           │
+          │ Xóa <div class="service-img-ph svc-ph-3"> bên dưới          │
+          │ Thay bằng:                                                   │
+          │ <img src="/images/service-clinic.jpg"                       │
+          │      alt="Khám bệnh lý mắt" class="service-img">            │
+          │ Nội dung: Bác sĩ đang soi đáy mắt / tư vấn bệnh nhân       │
+          │ Kích thước: 700 × 320 px                                     │
+          └──────────────────────────────────────────────────────────────┘
+          -->
+          <img src="/oldpersonchecking.jpg"
+				alt="Khám và điều trị bệnh lý mắt"
+				class="service-img" />
+
+          <div class="service-body">
+            <div class="service-icon-wrap icon-navy">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="service-name">Khám & Điều Trị Bệnh Lý Mắt</h3>
+            <p class="service-desc">Chẩn đoán và điều trị chuyên sâu các bệnh lý đáy mắt phức tạp, bao gồm Glaucoma, võng mạc đái tháo đường, viêm giác mạc, mộng thịt và các bệnh thường gặp.</p>
+            <div class="service-tags">
+              <span class="tag">Glaucoma</span>
+              <span class="tag">Võng mạc ĐTĐ</span>
+              <span class="tag">Mộng thịt</span>
+              <span class="tag">Viêm giác mạc</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+	<div class="reveal" style="margin-top:3rem;border-radius:20px;overflow:hidden;">
+		<img src="/youngpersonchecking.jpg"
+			alt="Bác sĩ Thu Ba tư vấn bệnh nhân"
+			style="width:100%;height:auto;display:block;border-radius:20px;" />
+	</div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       JOURNEY / TIMELINE
+  ═══════════════════════════════════════ -->
+  <section id="hanh-trinh">
+    <div class="journey-wrap">
+      <div class="journey-header reveal">
+        <div class="section-tag" style="justify-content:center;">Hành Trình Y Đức</div>
+        <h2 class="section-title" style="text-align:center;">35 Năm Tận Tâm<br>Vì Ánh Sáng Của Bạn</h2>
+        <p class="journey-motto">"Trao ánh sáng, giữ nụ cười"</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024 – Hiện Tại</div>
+          <h3 class="tl-title">Trưởng Khoa Phẫu Thuật Khúc Xạ — BV Cao Thắng</h3>
+          <p class="tl-desc">Đảm nhiệm vị trí lãnh đạo chuyên môn tại bệnh viện mắt JCI-accredited hàng đầu TP.HCM. Tiên phong ứng dụng SMILE PRO AI 4.0 và phác đồ điều trị cá nhân hóa.</p>
+          <div class="tl-chips">
+            <span class="chip">SMILE PRO AI 4.0</span>
+            <span class="chip">CLEAR & LASIK (Ziemer 2024)</span>
+            <span class="chip">JCI Hospital</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2022 – 2024</div>
+          <h3 class="tl-title">Bác Sĩ Lâm Sàng — BV Mắt Sài Gòn Ngô Gia Tự</h3>
+          <p class="tl-desc">Thực hành lâm sàng toàn diện, mở rộng chuyên môn về phẫu thuật khúc xạ nâng cao và điều trị các ca khó phức tạp.</p>
+          <div class="tl-chips">
+            <span class="chip">Presbymax (Schwind 2023)</span>
+            <span class="chip">SMILE Pro – Visumax 800</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot gold"></div>
+          <div class="tl-year gold-yr">2016 – 2019</div>
+          <h3 class="tl-title">Bác Sĩ Chuyên Khoa Cấp II & Tiên Phong Công Nghệ Mới</h3>
+          <p class="tl-desc">Nhận bằng BSCKII tại ĐH Y Khoa Phạm Ngọc Thạch. Tiên phong áp dụng ReLEx SMILE tại TP.HCM và đào tạo phẫu thuật khúc xạ cho đồng nghiệp.</p>
+          <div class="tl-chips">
+            <span class="chip">BSCKII – PNT 2017</span>
+            <span class="chip">ReLEx SMILE – Zeiss 2016</span>
+            <span class="chip">Presbyopia Laser Blended Vision</span>
+            <span class="chip">Giảng viên An Giang 2017</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2006 – 2019</div>
+          <h3 class="tl-title">Trưởng Khoa Mắt & Cố Vấn Y Khoa VTV2</h3>
+          <p class="tl-desc">Nguyên Trưởng Khoa Mắt BV Đa khoa An Sinh suốt 13 năm. Song song đó, tham gia chương trình tư vấn sức khỏe nhãn khoa trực tiếp trên sóng VTV2 hơn 11 năm — tiếp cận hàng triệu khán giả toàn quốc.</p>
+          <div class="tl-chips" style="margin-bottom:1.25rem;">
+            <span class="chip">VTV2 Consultant 2006–2017</span>
+            <span class="chip">Phaco & LASIK cơ bản 2010</span>
+            <span class="chip">CO2 Laser thẩm mỹ mi 2009</span>
+            <span class="chip">Botulinum Toxin A 2008</span>
+          </div>
+          <img src="/demonstrationpicture.jpg"
+               alt="Bác sĩ Thu Ba hướng dẫn chuyên môn"
+               style="width:100%;max-width:480px;border-radius:14px;object-fit:cover;display:block;border:1px solid rgba(11,30,61,0.08);box-shadow:0 4px 20px rgba(11,30,61,0.08);" />
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-dot dim"></div>
+          <div class="tl-year" style="color:var(--text-muted)">1989 – 2005</div>
+          <h3 class="tl-title">Nền Tảng Y Khoa Vững Chắc – ĐH Y Dược TP.HCM</h3>
+          <div class="tl-chips">
+            <span class="chip">1989 – Bác sĩ Y khoa</span>
+            <span class="chip">1999 – Chuyên khoa Cấp I</span>
+            <span class="chip">2005 – Thạc sĩ Nhãn khoa</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════ -->
+  <section id="danh-gia">
+    <div class="testimonials-wrap">
+
+      <div class="reveal" style="display:flex;flex-direction:column;align-items:center;margin-bottom:3rem;gap:1.25rem;">
+        <img src="/anotherpotrait.png"
+             alt="BSCKII Huỳnh Thị Thu Ba"
+             style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.3);" />
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.6);">"Trao ánh sáng, giữ nụ cười"</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;">BSCKII Huỳnh Thị Thu Ba</div>
+        </div>
+      </div>
+
+      <div class="testimonials-header reveal">
+        <div class="section-tag">Cảm Nhận Bệnh Nhân</div>
+        <h2 class="section-title">Hàng Nghìn Nụ Cười<br>Đã Được Trao Lại</h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">"Tôi bị cận nặng và giác mạc mỏng, nhiều nơi từ chối phẫu thuật. Bác sĩ Thu Ba kiên nhẫn giải thích, lên kế hoạch riêng và kết quả vượt mong đợi. Cảm ơn bác sĩ rất nhiều!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NH</div>
+            <div>
+              <div class="testimonial-name">Nguyễn Hoàng A.</div>
+              <div class="testimonial-meta">Phẫu thuật SMILE PRO · Quận 7, TP.HCM</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Mẹ tôi 70 tuổi, bị đục thủy tinh thể nặng. Bác sĩ Thu Ba rất nhẹ nhàng, giải thích cặn kẽ và phẫu thuật thành công hoàn toàn. Mẹ giờ thấy rõ như hồi còn trẻ!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TL</div>
+            <div>
+              <div class="testimonial-name">Trần Lan P.</div>
+              <div class="testimonial-meta">Phẫu thuật Phaco · Bình Dương</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Xem bác sĩ tư vấn trên VTV2 từ lâu, giờ được trực tiếp khám thật sự rất ấn tượng. Dễ chịu, chuyên môn cao, lắng nghe bệnh nhân. Tôi sẽ giới thiệu cho cả gia đình!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MK</div>
+            <div>
+              <div class="testimonial-name">Lê Minh K.</div>
+              <div class="testimonial-meta">Khám bệnh lý Glaucoma · Quận 8, TP.HCM</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════ -->
+  <section id="faq">
+    <div class="faq-wrap">
+      <div class="faq-header reveal">
+        <div class="section-tag" style="justify-content:center;">Câu Hỏi Thường Gặp</div>
+        <h2 class="section-title">Giải Đáp<br>Thắc Mắc Của Bạn</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Tôi có đủ điều kiện phẫu thuật SMILE PRO không?</span>
+            <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Điều kiện cơ bản bao gồm: từ 18 tuổi trở lên, độ cận ổn định ít nhất 1–2 năm, giác mạc đủ độ dày và không mắc bệnh lý mắt nặng. Bác sĩ Thu Ba chuyên điều trị các trường hợp giác mạc yếu — những trường hợp nhiều nơi từ chối. Cần khám sàng lọc trước để có kết luận chính xác nhất.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Phẫu thuật SMILE PRO khác LASIK truyền thống như thế nào?</span>
+            <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">SMILE PRO không cắt vạt giác mạc (flapless), chỉ tạo một vết rạch nhỏ 2–3mm, nên ít xâm lấn hơn, phục hồi nhanh hơn và giảm nguy cơ khô mắt sau phẫu thuật. AI 4.0 cá nhân hóa bản đồ điều trị cho từng mắt, cho kết quả chính xác và ổn định lâu dài hơn LASIK truyền thống.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Phòng khám có khám buổi tối hoặc cuối tuần không?</span>
+            <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Do lịch phẫu thuật tại BV Cao Thắng, phòng khám tư hoạt động theo lịch hẹn linh hoạt. Vui lòng liên hệ trước để sắp xếp thời gian thuận tiện nhất — kể cả buổi tối hoặc cuối tuần theo yêu cầu.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-q-text">Sau phẫu thuật SMILE, khi nào tôi có thể đi làm lại?</span>
+            <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Hầu hết bệnh nhân có thể nhìn rõ và đi làm lại sau 1–3 ngày. Tránh bơi lội và tiếp xúc nước bẩn trong 2 tuần đầu. Thị lực ổn định hoàn toàn sau 1–3 tháng. Bác sĩ sẽ lên lịch tái khám và theo dõi quá trình hồi phục cho bạn.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       APPOINTMENT
+  ═══════════════════════════════════════ -->
+  <section id="dat-lich">
+    <div class="apt-wrap">
+
+      <div class="apt-left">
+        <div class="section-tag apt-info-tag">Đặt Lịch Khám</div>
+        <h2 class="section-title apt-title">Đăng Ký Khám<br>Chuyên Sâu</h2>
+        <p class="apt-subtitle">Để được Bác sĩ Thu Ba trực tiếp thăm khám và tư vấn lộ trình điều trị cá nhân hóa, quý khách vui lòng liên hệ đặt lịch trước qua Zalo hoặc điện thoại.</p>
+
+        <div class="apt-details">
+          <div class="apt-detail">
+            <div class="apt-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="apt-detail-label">Phòng Khám Tư</div>
+              <div class="apt-detail-value">112 Đường Cao Lỗ, Phường 4, Quận 8, TP.HCM</div>
+              <div class="apt-note">Chỉ nhận bệnh nhân theo lịch hẹn</div>
+            </div>
+          </div>
+          <div class="apt-detail">
+            <div class="apt-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <div>
+              <div class="apt-detail-label">BV Cao Thắng (Phẫu Thuật)</div>
+              <div class="apt-detail-value">Bệnh viện Chuyên khoa Mắt Cao Thắng</div>
+              <div class="apt-note">Phẫu thuật & thủ thuật cao cấp · JCI Accredited</div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="zalo-card" style="margin-top:2rem">
+          <div class="zalo-card-text">
+            <strong>Đặt lịch nhanh qua Zalo</strong>
+            <span>Nhắn tin để được xếp lịch ưu tiên</span>
+          </div>
+          <!-- 🔗 Thay [SỐ_ĐIỆN_THOẠI] bằng số điện thoại thực (không có dấu cách) -->
+          <a href="https://zalo.me/[SỐ_ĐIỆN_THOẠI]" class="zalo-btn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 40 40" fill="white"><path d="M20 2C10.06 2 2 10.06 2 20s8.06 18 18 18 18-8.06 18-18S29.94 2 20 2zm7.5 25.5h-3.5l-2-3-2.5 3H16l4-5-3.5-4.5h3.5l2 2.5 2-2.5H27l-3.5 4.5 4 5z"/></svg>
+            Chat Zalo Ngay
+          </a>
+        </div>
+      </div>
+
+      <div class="apt-right reveal">
+        <div class="map-card">
+          <!-- Google Maps embed for 112 Cao Lo, District 8, HCMC -->
+          <iframe
+            class="map-embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9658!2d106.6723!3d10.7358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLEkMaw4budbmcgQ2FvIEzhu5UsIFBoxrDhu51uZyA0LCBR4bqrbiA4!5e0!3m2!1svi!2svn!4v1700000000"
+            title="Bản đồ phòng khám">
+          </iframe>
+          <div class="map-footer">
+            <div class="map-address">
+              <strong>Phòng Khám Chuyên Khoa Mắt BSCKII Huỳnh Thị Thu Ba</strong>
+              112 Đường Cao Lỗ, Phường 4, Quận 8, TP.HCM
+            </div>
+            <a href="https://maps.google.com/?q=112+Cao+Lo+Phuong+4+Quan+8+HCM" target="_blank" rel="noopener" class="map-dir-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Chỉ Đường
+            </a>
+          </div>
+        </div>
+
+        <!--
+        ┌──────────────────────────────────────────────────────────────┐
+        │ 📸 ẢNH #5 – ẢNH PHÒNG KHÁM (tuỳ chọn)                      │
+        │ Thêm bên dưới map-card nếu có:                               │
+        │ <img src="/images/phong-kham.jpg"                           │
+        │      alt="Phòng khám chuyên khoa mắt"                       │
+        │      style="width:100%;border-radius:16px;margin-top:1rem"> │
+        │ Nội dung: Mặt tiền hoặc nội thất phòng khám                  │
+        │ Kích thước: 800 × 400 px                                     │
+        └──────────────────────────────────────────────────────────────┘
+        -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo-name">BSCKII. Huỳnh Thị Thu Ba</div>
+      <div class="footer-tagline">"Trao ánh sáng, giữ nụ cười"</div>
+      <ul class="footer-links">
+        <li><a href="#dich-vu">Dịch Vụ</a></li>
+        <li><a href="#hanh-trinh">Hành Trình</a></li>
+        <li><a href="#danh-gia">Đánh Giá</a></li>
+        <li><a href="#faq">Câu Hỏi</a></li>
+        <li><a href="#dat-lich">Đặt Lịch</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Bản quyền thuộc về BSCKII Huỳnh Thị Thu Ba · 112 Đường Cao Lỗ, Quận 8, TP.HCM</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       FLOATING ACTION BUTTONS
+  ═══════════════════════════════════════ -->
+  <div class="fab-group">
+    <!-- 🔗 Thay [SỐ_ĐIỆN_THOẠI] bên dưới bằng số thực -->
+    <a href="https://zalo.me/[SỐ_ĐIỆN_THOẠI]" class="fab fab-zalo" target="_blank" rel="noopener" aria-label="Chat Zalo">
+      <div class="fab-ring"></div>
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="white"><path d="M20 2C10.06 2 2 10.06 2 20s8.06 18 18 18 18-8.06 18-18S29.94 2 20 2zm7.5 25.5h-3.5l-2-3-2.5 3H16l4-5-3.5-4.5h3.5l2 2.5 2-2.5H27l-3.5 4.5 4 5z"/></svg>
+      <span class="fab-tooltip">Chat Zalo</span>
+    </a>
+    <a href="#dat-lich" class="fab fab-apt" aria-label="Đặt lịch khám">
+      <div class="fab-ring"></div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span class="fab-tooltip">Đặt Lịch Khám</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    // ── Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ── Animated counters
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 7000;
+      const start = performance.now();
+      const step = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(eased * target);
+        el.textContent = value.toLocaleString('vi-VN');
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    // ── Intersection Observer for reveals + counters
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.querySelectorAll('.counter').forEach(animateCounter);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Also observe stat items directly for counters
+    document.querySelectorAll('.stat-item').forEach(el => {
+      const sub = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('.counter').forEach(animateCounter);
+            sub.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      sub.observe(el);
+    });
+
+    // ── FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-a');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-a').style.maxHeight = '0';
+        });
+
+        // Open clicked
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+
+  <!-- ═══════════════════════════════════════
+       STICKY MOBILE BAR (mobile only)
+  ═══════════════════════════════════════ -->
+  <div id="stickyBar" style="
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--navy);
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding:0.75rem 1.25rem;
+    z-index:600;
+    gap:0.75rem;
+    align-items:center;
+    box-shadow:0 -4px 24px rgba(0,0,0,0.25);
+  ">
+    <!-- 🔗 Replace [SỐ_ĐIỆN_THOẠI] with real number in both links below -->
+    <a href="tel:[SỐ_ĐIỆN_THOẠI]" style="
+      flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+      background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+      color:white;padding:0.7rem;border-radius:12px;text-decoration:none;
+      font-size:0.85rem;font-weight:600;
+    ">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.5 2 2 0 0 1 3.6 2.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Gọi Ngay
+    </a>
+    <a href="https://zalo.me/[SỐ_ĐIỆN_THOẠI]" target="_blank" rel="noopener" style="
+      flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+      background:#0068FF;color:white;padding:0.7rem;border-radius:12px;
+      text-decoration:none;font-size:0.85rem;font-weight:600;
+    ">
+      <svg width="16" height="16" viewBox="0 0 40 40" fill="white"><path d="M20 2C10.06 2 2 10.06 2 20s8.06 18 18 18 18-8.06 18-18S29.94 2 20 2zm7.5 25.5h-3.5l-2-3-2.5 3H16l4-5-3.5-4.5h3.5l2 2.5 2-2.5H27l-3.5 4.5 4 5z"/></svg>
+      Đặt Lịch Zalo
+    </a>
+  </div>
+
+  <script>
+    // Show sticky bar on mobile after scrolling past hero
+    const stickyBar = document.getElementById('stickyBar');
+    const hero = document.getElementById('hero');
+    if (window.innerWidth < 900) {
+      stickyBar.style.display = 'flex';
+      stickyBar.style.opacity = '0';
+      stickyBar.style.transform = 'translateY(100%)';
+      stickyBar.style.transition = 'opacity 0.3s, transform 0.3s';
+      const heroObs = new IntersectionObserver(([e]) => {
+        const show = !e.isIntersecting;
+        stickyBar.style.opacity = show ? '1' : '0';
+        stickyBar.style.transform = show ? 'translateY(0)' : 'translateY(100%)';
+      }, { threshold: 0.1 });
+      heroObs.observe(hero);
+    }
+  </script>
+
+</body>
+</html>
